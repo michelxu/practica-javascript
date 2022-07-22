@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porcentajes y descuentos - Taller 2</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<div class="container-fluid" style="padding-top: 50px; max-width: 75%">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron">
+                <h2>
+                    2. Porcentajes y descuentos
+                </h2>
+                <p>
+                    Curso práctico de Javascript! Taller 2: Porcentajes y descuentos - Platzi.
+                </p>
+                <p>
+                    <a class="btn btn-primary btn-large" href="#">Ver más</a>
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6" style="padding-top: 25px;">
+                            <h4>
+                                Calcular descuento
+                            </h4>
+                            <form role="form">
+                                <div class="form-group">
+                                    <label for="InputPrice">Precio unitario</label>
+                                    <input type="number" class="form-control" id="InputPrice"/>
+                                    <label for="InputCoupon">Aplicar un cupón (?)</label>
+                                    <input type="text" class="form-control" id="InputCoupon"/>
+                                </div>
+                                <button type="button" class="btn btn-primary btn-block" onclick="onClickBtnPrecioDto()"> Calcular descuento</button>
+                            </form>
+                        </div>
+                        <div class="col-md-6" style="padding-top: 25px">
+                            <h4>
+                                Resultado
+                            </h4>
+                            <p>Detalles de dto.</p>
+                            <p id="ResultPrice" style="font-size: 50px"></p>
+                        </div>                         
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/scripts.js"></script>
+<script src="./js/descuentos_original.js"></script>
+</body>
+</html>

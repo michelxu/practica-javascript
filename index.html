@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Figuras Geométricas</title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+
+	<div class="container-fluid" style="padding-top: 50px; max-width: 75%">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="jumbotron">
+					<h2>
+						Curso práctico de Javascript!
+					</h2>
+					<p>
+						Curso práctico de Javascript! Taller 1: Figuras geométricas! - Platzi.
+					</p>
+					<p>
+						<a class="btn btn-primary btn-large" href="#">Ver más</a>
+					</p>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<h3>
+							Taller 1: Figuras geométricas!
+						</h3>
+						<div class="row" style="padding-top: 25px">
+							<div class="col-md-4" style="padding-top: 25px">
+								<h4>
+									Cuadrado
+								</h4>
+								<form role="form">
+									<div class="form-group">
+										<label for="InputCuadrado">Lado del cuadrado</label>
+										<input type="number" class="form-control" id="InputCuadrado"/>
+									</div>
+									<button type="button" class="btn btn-primary" onclick="calcularPerimCuadrado()"> Calcular perímetro</button>
+            						<button type="button" class="btn btn-primary" onclick="calcularAreaCuadrado()"> Calcular área</button>
+								</form>
+							</div>
+							
+							<div class="col-md-4" style="padding-top: 25px;">
+								<h4>
+									Triángulo
+								</h4>
+								<p><b>Instrucciones:</b> <i>Para calcular el Área: Solo ingrese Altura y Base.</i></p>
+								<form role="form"">
+									<div class="form-group">
+										<label for="InputTrianguloL1">Lado 1</label>
+										<input type="number" class="form-control" id="InputTrianguloL1"/>
+										<label for="InputTrianguloL2">Lado 2/Altura</label>
+										<input type="number" class="form-control" id="InputTrianguloL2"/>
+										<label for="InputTrianguloB">Base</label>
+										<input type="number" class="form-control" id="InputTrianguloB"/>
+									</div>
+									
+									<button type="button" class="btn btn-primary" style="margin-bottom: 5px;" onclick="calcularPerimTriangulo()"> Calcular perímetro</button>
+            						<button type="button" class="btn btn-primary" style="margin-bottom: 5px;" onclick="calcularAreaTriangulo()"> Calcular área</button>
+									<button type="button" class="btn btn-primary" style="margin-bottom: 5px;" onclick="calcularAlturaIsos()"> Altura (Isósceles)</button>
+								</form>
+							</div>
+							<div class="col-md-4" style="padding-top: 25px; padding-bottom: 50px;">
+								<h4>
+									Círculo
+								</h4>
+								<form role="form">
+									<div class="form-group">
+										<label for="InputCirculo">Radio</label>
+										<input type="number" class="form-control" id="InputCirculo"/>
+									</div>
+									<button type="button" class="btn btn-primary" onclick="calcularPerimCirculo()"> Calcular perímetro</button>
+            						<button type="button" class="btn btn-primary" onclick="calcularAreaCirculo()"> Calcular área</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+	<script src="js/figuras.js"></script>
+  </body>
+</html>

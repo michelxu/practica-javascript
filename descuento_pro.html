@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porcentajes y descuentos - Taller 2</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<div class="container-fluid" style="padding-top: 50px; max-width: 75%">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron">
+                <h2>
+                    2. Porcentajes y descuentos
+                </h2>
+                <p>
+                    Curso práctico de Javascript! Taller 2: Porcentajes y descuentos - Platzi.
+                </p>
+                <p>
+                    <a class="btn btn-primary btn-large" href="#">Ver más</a>
+                </p>
+            </div>
+            <section class="row" id="productos">
+                <div class="col-md-12">
+                    <h4>
+                        Artículos
+                    </h4>
+                    <div class="row">
+                        <div class="col-md-4" style="padding-top: 25px;">
+                            <h5 id="snes_mini">
+                                SNES MINI
+                            </h5>
+                            <img alt="" class="responsive" src="https://elbosque.com.ec/multijuegos/wp-content/uploads/sites/59/2021/03/Frontal-Caja.jpg" />
+                            <h5 style="padding-bottom: 5px;">
+                                $199.00
+                            </h5>
+                            <button type="button" id="1" class="btn btn-primary btn-block" onclick="addToCart(this.id)">Añadir</button>
+                        </div>
+                        <div class="col-md-4" style="padding-top: 25px;">
+                            <h5 id="ps2_mini">
+                                PS2 MINI
+                            </h5>
+                            <img alt="" class="responsive" src="https://www.seekpng.com/png/detail/313-3133976_playstation-2-slim.png" />
+                            <h5 style="padding-bottom: 5px;">
+                                $149.00
+                            </h5>
+                            <button type="button" id="2" class="btn btn-primary btn-block" onclick="addToCart(this.id)">Añadir</button>
+                        </div>
+                        <div class="col-md-4" style="padding-top: 25px;">
+                            <h5 id="ps5_slim">
+                                PS5 SLIM
+                            </h5>
+                            <img alt="" class="responsive" src="https://m.media-amazon.com/images/I/61d4loPJB9L._SL1500_.jpg" />
+                            <h5 style="padding-bottom: 5px;">
+                                $549.00
+                            </h5>
+                            <button type="button" id="3" class="btn btn-primary btn-block" onclick="addToCart(this.id)">Añadir</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="row" style="padding-top: 50px;" id="carrito">
+                <div class="col-md-6">
+                    <h4>
+                        Carrito
+                    </h4>
+                    <p id="articulos">Artículos: </p>
+                    <h4 id="total" style="padding-top: 15px;">Total: </h4>
+                    <button type="button" class="btn btn-info" disabled>Pagar</button>
+                    <button type="button" class="btn btn-info" onclick="onClickBtnVaciar()">Vaciar</button>
+                    <br><br>
+                </div>
+                <div class="col-md-6">
+                    <h4>
+                        Descuento
+                    </h4>
+                    <form role="form">
+                        <div class="form-group">
+                            <label>Tiene un cupón (?)</label>
+                            <input type="text" for="btnCupon" id="inputCupon" class="form-control"/>
+                        </div>
+                        <button type="button" id="btnCupon" class="btn btn-primary" onclick="onClickBtnDescuento()">Aplicar cupón</button>
+                        <br><br>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/scripts.js"></script>
+<script src="./js/descuentos.js"></script>
+</body>
+</html>

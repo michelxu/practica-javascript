@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promedio - Taller 3</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+
+
+<div class="container-fluid" style="padding-top: 50px; max-width: 75%">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron">
+                <h2>
+                    3. Rango (Ejercicio extra)
+                </h2>
+                <p>
+                    Curso práctico de Javascript! Taller 3: Promedio, mediana y moda - Platzi.
+                </p>
+                <p>
+                    <a class="btn btn-primary btn-large" href="#">Ver más</a>
+                </p>
+            </div>
+            <section class="row" style="padding-top: 25px;">
+                <div class="col-md-4" name="descripcion">
+                    <h4>Rango</h4>
+                    <p>Es el resultado entre la resta de MayorValor-MenorValor de una lista.</p>
+                    <p><b>Ejemplo A. [11, 3, 9, 7, 23, 16]</b></p>
+                    <p><i>A. El rango es (20).</i></p>
+                </div>
+                <div class="col-md-4" name="agregar">
+                    <h4>Calcular</h4>
+                    <form role="form" action="" onsubmit="onClickBtnAgregar();return false">
+                        <div class="form-group">
+                            <label>Agrega un número a la lista</label>
+                            <input type="number" id="inputNumber" class="form-control"/>
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="onClickBtnAgregar()">Añadir</button>
+                        <button type="button" class="btn btn-primary" onclick="onClickBtnCalcularRango()">Calcular</button>
+                        <button type="button" class="btn btn-secondary" onclick="onClickBtnLimpiarArray()">Limpiar todo</button>
+                    </form>
+                    <br>
+                </div>
+                <div class="col-md-4" name="resultado">
+                    <h4>Resultado</h4>
+                    <p id="txt_lista"><i>Lista: </i></p>
+                    <h4 style="color: red;" id="txt_rango">0</h4>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/scripts.js"></script>
+<script src="./js/rango.js"></script>
+</body>
+</html>

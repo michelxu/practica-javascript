@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Javascript - Actividad Final</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+
+
+<div class="container-fluid" style="padding-top: 50px; max-width: 75%">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron">
+                <h2><kbd>the game of life!</kbd></h2>
+                <p>Curso práctico de Javascript! Actividad final.</p>
+                <p>Simula la creación de un personaje para <kbd><i>the game of life!</i></kbd> con la
+                    dificultad determinada por los valores computados. Estos valores se comparan con estadisticas
+                    (como Calidad de vida o Salario promedio por país) para luego realizar una media
+                    ponderada y determinar el nivel de dificultad de vida del personaje.
+                </p>
+            </div>
+            <section class="row">
+                <div class="col-md-4" style="padding-top: 25px;" name="create_player">
+                    <h4>Nuevo jugador</h4>
+                    <p>Crea un nuevo personaje.</p>
+                    <form role="form" action="" onsubmit="onClickBtnDosomtin();return false">
+                        <div class="form-group">
+                            <label>Username</label>
+                            <input type="text" id="inputUsername" class="form-control" minlength="4" maxlength="16"/>
+                            <label>Género</label>
+                            <input list="genero" name="genero" id="inputGenero" onkeypress="return false" class="form-control">
+                            <datalist id="genero">
+                                <option value="Hombre">
+                                <option value="Mujer">
+                                <option value="Otro">
+                            </datalist>
+                            <label>País</label>
+                            <input list="pais" name="pais" id="inputPais" onkeypress="return false" class="form-control">
+                            <datalist id="pais">
+                                <option value="Alemania">
+                                <option value="Argentina">
+                                <option value="Chile">
+                                <option value="España">
+                                <option value="Estados Unidos">
+                                <option value="Indonesia">
+                                <option value="Mexico">
+                                <option value="Nigeria">
+                                <option value="Panama">
+                                <option value="Paises Bajos">
+                                <option value="Peru">
+                                <option value="Suiza">
+                                <option value="Venezuela">
+                            </datalist>
+                            <label>Escolaridad</label>
+                            <input list="escolaridad" name="escolaridad" id="inputEscolaridad" onkeypress="return false" class="form-control">
+                            <datalist id="escolaridad">
+                                <option value="Básica">
+                                <option value="Media Superior">
+                                <option value="Superior">
+                            </datalist>
+                            <label>Salario mensual (USD)</label>
+                            <input type="number" id="inputSalario" min="20" max="1000000" step="10" class="form-control"/>
+                            <label>Físico</label>
+                            <input type="range" id="inputFisico" min="25" max="95" value="65" class="form-control"/>
+                            <label>Inteligencia</label>
+                            <input type="range" id="inputInteligencia" min="25" max="95" value="70" class="form-control"/>
+                            <label>Rasgos</label>
+                            <input type="text" id="inputRasgos" disabled placeholder="Aleatorio" class="form-control"/>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-block" onclick="onClickBtnDosomtin()">Crear jugador</button>
+                        <button type="button" class="btn btn-secondary btn-block" onclick="onClickBtnLimpiarInputs()">Restablecer</button>
+                    </form>
+                </div>
+                <div class="col-md-8"" name="player_stats">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4 style="padding-top: 25px;"><kbd id="txt_title_username">Player 1</kbd></h4>
+                            <img id="img_profile" src="/img/default_pp.png" class="img-fluid" style="width: 110px; padding: 5px;">
+                        </div>
+                        <div class="col-md-6">
+                            <h4 style="padding-top: 25px;"><kbd>Data</kbd></h4>
+                            <p id="txt_username">Username: -</p>
+                            <p id="txt_pais">País: ?</p>
+                            <p id="txt_rasgos">Rasgos: ?</p>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <kbd>Dificultad</kbd>
+                    <div class="progress" style="height: 30px;">
+                        <div class="progress-bar progress-bar-striped bg-info progress-bar-animated" id="bar_dificultad" style="width:50%; height:30px">
+                          <p id="bar_dificultad_txt2" style="padding-top: 6px;"></p>
+                        </div>
+                    </div>
+                    <br>
+                    <!--<code id="bar_dificultad_txt" style="padding-bottom: 20px;"></code><br>-->
+
+                    <kbd >Calidad de vida</kbd>
+                    <div class="progress" style="height: 25px;">
+                        <div class="progress-bar bg-info" id="bar_qol" style="width:50%; height:25px">
+                          <p style="padding-top: 6px;"></p>
+                        </div>
+                    </div>
+                    <code id="bar_qol_txt" style="padding-bottom: 20px;"></code><br>
+
+                    <kbd>Escolaridad</kbd>
+                    <div class="progress" style="height: 25px;">
+                        <div class="progress-bar bg-info" id="bar_escolaridad" style="width:50%; height:25px">
+                          <p style="padding-top: 6px;"></p>
+                        </div>
+                    </div>
+                    <code id="bar_escolaridad_txt" style="padding-bottom: 20px;"></code><br>
+
+                    <kbd>Salario</kbd>
+                    <div class="progress" style="height: 25px;">
+                        <div class="progress-bar bg-info" id="bar_salario" style="width:50%; height:25px">
+                          <p style="padding-top: 6px;"></p>
+                        </div>
+                    </div>
+                    <code id="bar_salario_txt" style="padding-bottom: 20px;"></code><br>
+                </div>
+            </section>
+            <br><br><br>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/scripts.js"></script>
+<script src="./js/paises.js"></script>
+<script src="./js/gamelife.js"></script>
+</body>
+</html>
