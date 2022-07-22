@@ -176,7 +176,7 @@ function onClickBtnDosomtin(){
 
         //******************** 3. Mostrar datos en HTML ********************
         let img_profile = document.getElementById("img_profile"); //ProfileP
-        img_profile.src = "/img/" + img_pp +".png";
+        img_profile.src = "img/" + img_pp +".png";
         img_profile.className = "img-fluid;";
         if (generoValue == "Otro"){
             img_profile.className = "img-fluid; rotate180";
