@@ -1,1 +1,1 @@
-# practica-javascript
+# 2javascript-practico
